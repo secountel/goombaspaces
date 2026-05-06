@@ -3,10 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Goomba.Space</title>
+    <style>
+        /* Full-page styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #00aaff; /* Blue base */
+            background-image: radial-gradient(white 5%, transparent 6%);
+            background-size: 20px 20px; /* Size of dots */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Center text styling */
+        .interactive-text {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px 40px;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect */
+        .interactive-text:hover {
+            background-color: white;
+            color: #00aaff;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>This is a sample HTML document.</p>
+    <div class="interactive-text" onclick="redirect()">
+        goomba.space
+    </div>
+
+    <script>
+        function redirect() {
+            window.location.href = "https://goomba.space"; // Redirect to goomba.space
+        }
+    </script>
 </body>
 </html>
