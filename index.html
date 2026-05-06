@@ -20,8 +20,8 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Center text styling */
-        .interactive-text {
+        /* Button styling */
+        .interactive-button {
             color: white;
             font-size: 2rem;
             font-weight: bold;
@@ -32,20 +32,26 @@
             cursor: pointer;
             transition: all 0.3s ease;
             user-select: none; /* Prevent text selection */
+            background: none; /* transparent background */
         }
 
         /* Hover effect */
-        .interactive-text:hover {
+        .interactive-button:hover {
             background-color: white;
             color: #00aaff;
             transform: scale(1.1);
         }
+
+        /* Active/click effect */
+        .interactive-button:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
 <body>
-    <div class="interactive-text" onclick="playSound()">
+    <button class="interactive-button" onclick="playSound()">
         goomba.space
-    </div>
+    </button>
 
     <!-- Sound file -->
     <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
