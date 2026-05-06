@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goomba.Space</title>
+    <title>Goomba Space</title>
     <style>
         /* Full-page styling */
         body, html {
@@ -31,6 +31,7 @@
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
+            user-select: none; /* Prevent text selection */
         }
 
         /* Hover effect */
@@ -42,13 +43,18 @@
     </style>
 </head>
 <body>
-    <div class="interactive-text" onclick="redirect()">
+    <div class="interactive-text" onclick="playSound()">
         goomba.space
     </div>
 
+    <!-- Sound file -->
+    <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+
     <script>
-        function redirect() {
-            window.location.href = "https://goomba.space"; // Redirect to goomba.space
+        function playSound() {
+            const sound = document.getElementById('clickSound');
+            sound.currentTime = 0; // rewind to start
+            sound.play();
         }
     </script>
 </body>
