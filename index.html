@@ -12,12 +12,24 @@
             height: 100%;
             width: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: #00aaff; /* Blue base */
             background-image: radial-gradient(white 5%, transparent 6%);
             background-size: 20px 20px; /* Size of dots */
             font-family: Arial, sans-serif;
+        }
+
+        /* Counter styling */
+        #clickCounter {
+            font-size: 1.5rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3); /* Slightly transparent */
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            user-select: none; /* Prevent text selection */
         }
 
         /* Button styling */
@@ -49,7 +61,11 @@
     </style>
 </head>
 <body>
-    <button class="interactive-button" onclick="playSound()">
+    <!-- Click counter -->
+    <div id="clickCounter">Clicks: 0</div>
+
+    <!-- Button -->
+    <button class="interactive-button" onclick="handleClick()">
         goomba.space
     </button>
 
@@ -57,7 +73,14 @@
     <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
 
     <script>
-        function playSound() {
+        let clickCount = 0;
+
+        function handleClick() {
+            // Increment counter
+            clickCount++;
+            document.getElementById('clickCounter').textContent = `Clicks: ${clickCount}`;
+
+            // Play sound
             const sound = document.getElementById('clickSound');
             sound.currentTime = 0; // rewind to start
             sound.play();
