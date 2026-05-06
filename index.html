@@ -69,9 +69,6 @@
         goomba.space
     </button>
 
-    <!-- Sound file -->
-    <audio id="clickSound" src="sound.mp3" preload="auto"></audio>
-
     <script>
         let clickCount = 0;
 
@@ -80,9 +77,8 @@
             clickCount++;
             document.getElementById('clickCounter').textContent = `Goomba Points: ${clickCount}`;
 
-            // Play sound
-            const sound = document.getElementById('clickSound');
-            sound.currentTime = 0; // rewind to start
+            // Play overlapping sound
+            const sound = new Audio('sound.mp3'); // create new instance
             sound.play();
         }
     </script>
